@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.google.gson.Gson;
+import com.klinux.model.Person;
 import com.klinux.model.SimpleModel;
 
 @RestController
@@ -16,7 +17,6 @@ import com.klinux.model.SimpleModel;
 public class KafkaSimpleController {
 
 	private KafkaTemplate<String, String> kafkaTemplate;
-
 	private Gson jsonConverter;
 
 	@Autowired
@@ -30,12 +30,23 @@ public class KafkaSimpleController {
 		kafkaTemplate.send("myTopic", jsonConverter.toJson(simpleModel));
 	}
 
+	@PostMapping("/v2")
+	public void post(@RequestBody Person person) {
+		kafkaTemplate.send("myTopic2", jsonConverter.toJson(person));
+	}
+
 	@KafkaListener(topics = "myTopic")
 	public void getFromKafka(String jsonSimpleModel) {
 		System.out.println(jsonSimpleModel);
-
 		SimpleModel simpleModel = (SimpleModel) jsonConverter.fromJson(jsonSimpleModel, SimpleModel.class);
 		System.out.println(simpleModel.toString());
 
+	}
+
+	@KafkaListener(topics = "myTopic2")
+	public void getFromKafka2(String jsonPerson) {
+		System.out.println(jsonPerson);
+		Person person = (Person) jsonConverter.fromJson(jsonPerson, Person.class);
+		System.out.println(person.toString());
 	}
 }

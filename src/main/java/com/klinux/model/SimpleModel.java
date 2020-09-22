@@ -1,7 +1,9 @@
 package com.klinux.model;
 
-public class SimpleModel {
+import java.io.Serializable;
 
+public class SimpleModel implements Serializable {
+	private static final long serialVersionUID = 5125554126727074679L;
 	private String name;
 	private String lastname;
 
