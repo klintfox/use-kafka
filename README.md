@@ -34,7 +34,8 @@ https://kafka.apache.org/downloads
     kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic myTopic
     ```
 ### SprignBoot
-- Ejecutar la aplicación "use-kafka"
+- Clonar el repositorio con git https://github.com/klintfox/use-kafka.git
+- Importar el proyecto en sprinboot y ejecutar la aplicación "use-kafka"
 
 ### Postman
 ## Prueba en postman para myTopic
