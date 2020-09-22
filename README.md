@@ -47,7 +47,7 @@ https://kafka.apache.org/downloads
         "lastname": "Rose"
     }
     ```
-## Prueba para myTopic2 
+## Prueba en postman para myTopic2
 - Realizar un Post a la siguiente  y pasarle el siguiente json para probar uno de los métodos del proyecto de ejemplo
     ```
     localhost:8090/api/kafka/persona    
