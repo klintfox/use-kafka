@@ -40,7 +40,6 @@ public class KafkaConfig {
 	@Bean
 	public ConsumerFactory<String, String> consumerFactory() {
 		Map<String, Object> config = new HashMap<>();
-
 		config.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "0.0.0.0:9092");
 		config.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
 		config.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);

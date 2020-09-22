@@ -1,5 +1,5 @@
-# Use Apache Kafka
-Ejemplo de la creación y
+# Apache Kafka
+Ejemplo de la creación de un Producer y Consumer en Apache Kafka y Springboot
 
 ### Descripci+on
 Apache Kafka es un proyecto de intermediación de mensajes de código abierto desarrollado por LinkedIn y donado a la Apache Software Foundation escrito en Java y Scala
@@ -37,11 +37,22 @@ https://kafka.apache.org/downloads
 - Ejecutar la aplicación "use-kafka"
 
 ### Postman
-- En postman realizar un Post a la siguiente  y pasarle el siguiente json para probar uno de los métodos del proyecto de ejemplo
+## Prueba en postman para myTopic
+- Realizar un Post a la siguiente  y pasarle el siguiente json para probar uno de los métodos del proyecto de ejemplo
     ```
-    localhost:8090/api/kafka
+    localhost:8090/api/kafka/ejemplo
     ```
     {
-        "name": "Vanessa",
-        "lastname": "Salcedo"
+        "name": "Axl",
+        "lastname": "Rose"
+    }
+## Prueba para myTopic2 
+- Realizar un Post a la siguiente  y pasarle el siguiente json para probar uno de los métodos del proyecto de ejemplo
+    ```
+    localhost:8090/api/kafka/persona
+    ```
+    {
+        "name": "Mick",
+        "lastname": "Jagger",
+        "age": 77
     }

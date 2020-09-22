@@ -25,12 +25,12 @@ public class KafkaSimpleController {
 		this.jsonConverter = jsonConverter;
 	}
 
-	@PostMapping
+	@PostMapping("/ejemplo")
 	public void post(@RequestBody SimpleModel simpleModel) {
 		kafkaTemplate.send("myTopic", jsonConverter.toJson(simpleModel));
 	}
 
-	@PostMapping("/v2")
+	@PostMapping("/persona")
 	public void post(@RequestBody Person person) {
 		kafkaTemplate.send("myTopic2", jsonConverter.toJson(person));
 	}
